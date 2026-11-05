@@ -1,0 +1,95 @@
+{
+  "type": "homepage",
+  "lang": "en-us",
+  "title": "Homepage",
+  "data": {
+    "meta_title": "[Business name] · Plumbing in [Your city]",
+    "meta_description": "[One sentence about what you do and who you help]",
+    "slices": [
+      {
+        "slice_type": "hearth_hero",
+        "variation": "default",
+        "primary": {
+          "rating_text": "[4.9] from [120] Google reviews",
+          "heading": [
+            { "type": "heading1", "text": "Fast, friendly help for your home", "spans": [{ "type": "em", "start": 29, "end": 33 }] }
+          ],
+          "description": [{ "type": "paragraph", "text": "[One sentence about what you do and who you help]", "spans": [] }],
+          "chip_one": "[15]+ years in business",
+          "chip_two": "[1,200]+ jobs done"
+        }
+      },
+      {
+        "slice_type": "hearth_trust_strip",
+        "variation": "default",
+        "primary": {
+          "points": [
+            { "icon": "shield", "label": "[Licensed & insured]" },
+            { "icon": "price", "label": "[Upfront pricing]" },
+            { "icon": "clock", "label": "[Same-day service]" },
+            { "icon": "check", "label": "[Satisfaction guarantee]" }
+          ]
+        }
+      },
+      {
+        "slice_type": "hearth_services",
+        "variation": "default",
+        "primary": {
+          "eyebrow": "Our services",
+          "heading": [{ "type": "heading2", "text": "Plumbing done right, the first time", "spans": [] }],
+          "services": [
+            { "name": [{ "type": "heading3", "text": "[Service 1]", "spans": [] }], "description": [{ "type": "paragraph", "text": "[One line about this service]", "spans": [] }] },
+            { "name": [{ "type": "heading3", "text": "[Service 2]", "spans": [] }], "description": [{ "type": "paragraph", "text": "[One line about this service]", "spans": [] }] },
+            { "name": [{ "type": "heading3", "text": "[Service 3]", "spans": [] }], "description": [{ "type": "paragraph", "text": "[One line about this service]", "spans": [] }] },
+            { "name": [{ "type": "heading3", "text": "[Service 4]", "spans": [] }], "description": [{ "type": "paragraph", "text": "[One line about this service]", "spans": [] }] },
+            { "name": [{ "type": "heading3", "text": "[Service 5]", "spans": [] }], "description": [{ "type": "paragraph", "text": "[One line about this service]", "spans": [] }] },
+            { "name": [{ "type": "heading3", "text": "[Service 6]", "spans": [] }], "description": [{ "type": "paragraph", "text": "[One line about this service]", "spans": [] }] }
+          ]
+        }
+      },
+      {
+        "slice_type": "hearth_how_it_works",
+        "variation": "default",
+        "primary": {
+          "heading": [{ "type": "heading2", "text": "How it works", "spans": [] }],
+          "steps": [
+            { "title": [{ "type": "heading3", "text": "Tell us what you need", "spans": [] }], "text": [{ "type": "paragraph", "text": "Call or send a quick request — it takes a minute.", "spans": [] }] },
+            { "title": [{ "type": "heading3", "text": "We come to you", "spans": [] }], "text": [{ "type": "paragraph", "text": "We confirm a time that works and arrive ready to help.", "spans": [] }] },
+            { "title": [{ "type": "heading3", "text": "Job done, no surprises", "spans": [] }], "text": [{ "type": "paragraph", "text": "You approve the price before we start.", "spans": [] }] }
+          ]
+        }
+      },
+      {
+        "slice_type": "hearth_reviews",
+        "variation": "default",
+        "primary": {
+          "eyebrow": "Reviews",
+          "heading": [{ "type": "heading2", "text": "What your neighbors say", "spans": [] }],
+          "reviews": [
+            { "quote": [{ "type": "paragraph", "text": "[A short review from a real customer]", "spans": [] }], "name": "[Customer name]", "detail": "[Neighborhood]", "rating": 5 },
+            { "quote": [{ "type": "paragraph", "text": "[A short review from a real customer]", "spans": [] }], "name": "[Customer name]", "detail": "[Neighborhood]", "rating": 5 },
+            { "quote": [{ "type": "paragraph", "text": "[A short review from a real customer]", "spans": [] }], "name": "[Customer name]", "detail": "[Neighborhood]", "rating": 5 }
+          ]
+        }
+      },
+      {
+        "slice_type": "hearth_service_area",
+        "variation": "default",
+        "primary": {
+          "eyebrow": "Service area",
+          "heading": [{ "type": "heading2", "text": "Proudly serving [Your city]", "spans": [] }],
+          "text": [{ "type": "paragraph", "text": "Not sure if we cover your street? Call us — if we can't help, we'll tell you who can.", "spans": [] }],
+          "areas": [{ "name": "[Neighborhood]" }, { "name": "[Neighborhood]" }, { "name": "[Neighborhood]" }, { "name": "[Nearby town]" }]
+        }
+      },
+      {
+        "slice_type": "hearth_cta",
+        "variation": "default",
+        "primary": {
+          "heading": [{ "type": "heading2", "text": "Need a hand today?", "spans": [] }],
+          "text": [{ "type": "paragraph", "text": "Tell us what's going on and we'll get back to you fast.", "spans": [] }]
+        }
+      }
+    ]
+  }
+}

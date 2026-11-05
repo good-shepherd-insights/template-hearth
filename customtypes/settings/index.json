@@ -1,0 +1,103 @@
+{
+  "format": "custom",
+  "id": "settings",
+  "json": {
+    "Main": {
+      "business_name": {
+        "config": {
+          "label": "Business name"
+        },
+        "type": "Text"
+      },
+      "logo": {
+        "config": {
+          "label": "Logo"
+        },
+        "type": "Image"
+      },
+      "trade": {
+        "config": {
+          "label": "Trade",
+          "placeholder": "e.g. Plumbing"
+        },
+        "type": "Text"
+      },
+      "city": {
+        "config": {
+          "label": "City or service area"
+        },
+        "type": "Text"
+      },
+      "phone": {
+        "config": {
+          "label": "Phone"
+        },
+        "type": "Text"
+      },
+      "email": {
+        "config": {
+          "label": "Email"
+        },
+        "type": "Text"
+      },
+      "address": {
+        "config": {
+          "label": "Address"
+        },
+        "type": "Text"
+      },
+      "hours": {
+        "config": {
+          "label": "Opening hours"
+        },
+        "type": "Text"
+      },
+      "primary_color": {
+        "config": {
+          "label": "Brand colour"
+        },
+        "type": "Color"
+      },
+      "accent_color": {
+        "config": {
+          "label": "Accent colour"
+        },
+        "type": "Color"
+      },
+      "font_pair": {
+        "config": {
+          "default_value": "Modern",
+          "label": "Fonts",
+          "options": [
+            "Modern",
+            "Classic",
+            "Friendly"
+          ]
+        },
+        "type": "Select"
+      },
+      "cta_label": {
+        "config": {
+          "label": "Main button label",
+          "placeholder": "e.g. Get a free quote"
+        },
+        "type": "Text"
+      },
+      "cta_link": {
+        "config": {
+          "label": "Main button link"
+        },
+        "type": "Link"
+      },
+      "license_note": {
+        "config": {
+          "label": "Licence / insurance note"
+        },
+        "type": "Text"
+      }
+    }
+  },
+  "label": "Settings",
+  "repeatable": false,
+  "status": true
+}

@@ -1,0 +1,5 @@
+{
+  "repositoryName": "template-hearth",
+  "libraries": ["./app/slices"],
+  "routes": [{ "type": "homepage", "path": "/" }]
+}

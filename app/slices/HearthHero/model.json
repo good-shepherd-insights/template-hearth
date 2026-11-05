@@ -1,0 +1,64 @@
+{
+  "id": "hearth_hero",
+  "name": "Hearth Hero",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "",
+      "id": "default",
+      "imageUrl": "",
+      "name": "Default",
+      "primary": {
+        "rating_text": {
+          "config": {
+            "label": "Rating badge",
+            "placeholder": "e.g. 4.9 from 120 Google reviews"
+          },
+          "type": "Text"
+        },
+        "heading": {
+          "config": {
+            "label": "Headline",
+            "single": "heading1,em"
+          },
+          "type": "StructuredText"
+        },
+        "description": {
+          "config": {
+            "label": "Description",
+            "single": "paragraph"
+          },
+          "type": "StructuredText"
+        },
+        "image_one": {
+          "config": {
+            "label": "Left photo"
+          },
+          "type": "Image"
+        },
+        "chip_one": {
+          "config": {
+            "label": "Left photo badge",
+            "placeholder": "e.g. 15+ years in business"
+          },
+          "type": "Text"
+        },
+        "image_two": {
+          "config": {
+            "label": "Right photo"
+          },
+          "type": "Image"
+        },
+        "chip_two": {
+          "config": {
+            "label": "Right photo badge",
+            "placeholder": "e.g. 1,200+ jobs done"
+          },
+          "type": "Text"
+        }
+      },
+      "version": ""
+    }
+  ]
+}

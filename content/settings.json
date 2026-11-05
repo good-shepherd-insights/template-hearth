@@ -1,0 +1,19 @@
+{
+  "type": "settings",
+  "lang": "en-us",
+  "title": "Settings",
+  "data": {
+    "business_name": "[Business name]",
+    "trade": "Plumbing",
+    "city": "[Your city]",
+    "phone": "[(555) 000-0000]",
+    "email": "[Your email]",
+    "address": "[Your address]",
+    "hours": "[Your opening hours]",
+    "primary_color": "#0f3d3e",
+    "accent_color": "#c6f36b",
+    "font_pair": "Modern",
+    "cta_label": "Get a free quote",
+    "license_note": "[Licensed & insured]"
+  }
+}

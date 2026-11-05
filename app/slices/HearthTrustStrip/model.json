@@ -1,0 +1,44 @@
+{
+  "id": "hearth_trust_strip",
+  "name": "Hearth Trust Strip",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "",
+      "id": "default",
+      "imageUrl": "",
+      "name": "Default",
+      "primary": {
+        "points": {
+          "config": {
+            "fields": {
+              "icon": {
+                "config": {
+                  "default_value": "check",
+                  "label": "Icon",
+                  "options": [
+                    "shield",
+                    "price",
+                    "clock",
+                    "check"
+                  ]
+                },
+                "type": "Select"
+              },
+              "label": {
+                "config": {
+                  "label": "Label"
+                },
+                "type": "Text"
+              }
+            },
+            "label": "Trust points"
+          },
+          "type": "Group"
+        }
+      },
+      "version": ""
+    }
+  ]
+}

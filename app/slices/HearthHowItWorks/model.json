@@ -1,0 +1,46 @@
+{
+  "id": "hearth_how_it_works",
+  "name": "Hearth How It Works",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "",
+      "id": "default",
+      "imageUrl": "",
+      "name": "Default",
+      "primary": {
+        "heading": {
+          "config": {
+            "label": "Heading",
+            "single": "heading2"
+          },
+          "type": "StructuredText"
+        },
+        "steps": {
+          "config": {
+            "fields": {
+              "title": {
+                "config": {
+                  "label": "Step title",
+                  "single": "heading3"
+                },
+                "type": "StructuredText"
+              },
+              "text": {
+                "config": {
+                  "label": "Step text",
+                  "single": "paragraph"
+                },
+                "type": "StructuredText"
+              }
+            },
+            "label": "Steps"
+          },
+          "type": "Group"
+        }
+      },
+      "version": ""
+    }
+  ]
+}

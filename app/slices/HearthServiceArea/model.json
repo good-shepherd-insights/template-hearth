@@ -1,0 +1,57 @@
+{
+  "id": "hearth_service_area",
+  "name": "Hearth Service Area",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "",
+      "id": "default",
+      "imageUrl": "",
+      "name": "Default",
+      "primary": {
+        "eyebrow": {
+          "config": {
+            "label": "Eyebrow"
+          },
+          "type": "Text"
+        },
+        "heading": {
+          "config": {
+            "label": "Heading",
+            "single": "heading2"
+          },
+          "type": "StructuredText"
+        },
+        "text": {
+          "config": {
+            "label": "Text",
+            "single": "paragraph"
+          },
+          "type": "StructuredText"
+        },
+        "map": {
+          "config": {
+            "label": "Map image"
+          },
+          "type": "Image"
+        },
+        "areas": {
+          "config": {
+            "fields": {
+              "name": {
+                "config": {
+                  "label": "Area name"
+                },
+                "type": "Text"
+              }
+            },
+            "label": "Areas"
+          },
+          "type": "Group"
+        }
+      },
+      "version": ""
+    }
+  ]
+}

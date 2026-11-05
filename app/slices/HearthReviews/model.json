@@ -1,0 +1,66 @@
+{
+  "id": "hearth_reviews",
+  "name": "Hearth Reviews",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "",
+      "id": "default",
+      "imageUrl": "",
+      "name": "Default",
+      "primary": {
+        "eyebrow": {
+          "config": {
+            "label": "Eyebrow"
+          },
+          "type": "Text"
+        },
+        "heading": {
+          "config": {
+            "label": "Heading",
+            "single": "heading2"
+          },
+          "type": "StructuredText"
+        },
+        "reviews": {
+          "config": {
+            "fields": {
+              "quote": {
+                "config": {
+                  "label": "Review",
+                  "single": "paragraph"
+                },
+                "type": "StructuredText"
+              },
+              "name": {
+                "config": {
+                  "label": "Customer name"
+                },
+                "type": "Text"
+              },
+              "detail": {
+                "config": {
+                  "label": "Neighborhood or detail"
+                },
+                "type": "Text"
+              },
+              "rating": {
+                "config": {
+                  "label": "Stars",
+                  "max": 5,
+                  "min": 1,
+                  "step": 1
+                },
+                "type": "Number"
+              }
+            },
+            "label": "Reviews"
+          },
+          "type": "Group"
+        }
+      },
+      "version": ""
+    }
+  ]
+}

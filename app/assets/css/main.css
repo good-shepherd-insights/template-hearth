@@ -1,0 +1,109 @@
+/* Global stylesheet: nuxt.com/docs/4.x/getting-started/styling ("The CSS Property") — "The natural
+   place for your stylesheets is the app/assets/ directory"; registered in nuxt.config `css` and
+   "injected globally and present in all pages".
+
+   Every value below is taken from the design source, Claude Design canvas "Home Services
+   Templates" → project/Main.dc.html ("Template A · Hearth"); line numbers refer to that file:
+     ground #f5f5f2 (l.18) · card border #e7e5df (l.86) · muted text #555555 (l.89)
+     container max-width 1200px, side padding 24px (l.21, 28, 76) · section padding 88px (l.76, 140)
+     eyebrow 14px/600/0.08em (l.79) · section heading 44px/1.1/800 (l.80)
+     pill buttons radius 999px, accent bg, brand text, 600 (l.36)
+     default brand #0f3d3e and accent #c6f36b (data-props, l.166) · heading font Plus Jakarta Sans (l.178)
+     topbar padding 8px (l.21) · header padding 20px (l.28) · footer grid minmax(220px,1fr), 56px (l.154)
+   --brand / --accent / --font-heading are overridden per site from the Settings document (app.vue). */
+:root {
+  --brand: #0f3d3e;
+  --accent: #c6f36b;
+  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  --ground: #f5f5f2;
+  --line: #e7e5df;
+  --muted: #555555;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: #1a1a1a; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.5; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { font-family: var(--font-heading); margin: 0; }
+p { margin: 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 88px 0; }
+.eyebrow { font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand); }
+.section-head h2 { font-size: 44px; line-height: 1.1; font-weight: 800; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 999px; font-weight: 600; }
+.btn-accent { background: var(--accent); color: var(--brand); }
+.btn-ghost { border: 1px solid rgba(255, 255, 255, 0.45); color: #ffffff; }
+.card { background: #ffffff; border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+
+/* Shell (topbar, header, footer — rendered by app.vue from Settings) */
+.topbar { background: var(--brand); color: #ffffff; font-size: 13px; }
+.topbar-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 8px 24px; }
+.header { background: var(--brand); color: #ffffff; }
+.header-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-weight: 700; font-size: 20px; }
+.brand-logo { height: 40px; width: auto; border-radius: 10px; }
+.footer { background: var(--brand); color: rgba(255, 255, 255, 0.85); }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; padding: 56px 24px; }
+.footer strong { color: #ffffff; display: block; margin-bottom: 8px; }
+.footer-name { font-family: var(--font-heading); font-size: 18px; }
+.text-link { font-weight: 600; color: var(--brand); }
+.section-white { background: #ffffff; }
+.section-head-center { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 40px; }
+
+/* HearthHero — design lines 27–65: brand ground, centred copy (max 900px, gap 20px), 64px/1.05/800
+   heading, highlight in accent, 52px pill buttons, two 340px photos with 999px chips (8px 14px). */
+.hero { background: var(--brand); color: #ffffff; }
+.hero-copy { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; padding-top: 56px; }
+.hero-badge { padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.3); font-size: 14px; }
+.hero h1 { max-width: 900px; font-size: 64px; line-height: 1.05; font-weight: 800; letter-spacing: -0.02em; }
+.hero h1 em { color: var(--accent); font-style: normal; }
+.hero-copy > p { max-width: 620px; font-size: 18px; opacity: 0.85; }
+.hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 8px; }
+.hero-actions .btn { min-height: 52px; padding: 0 28px; }
+.hero-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; padding-top: 48px; }
+.hero-photo { position: relative; margin: 0; height: 340px; border-radius: 18px 18px 0 0; overflow: hidden; background: rgba(255, 255, 255, 0.1); }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-chip { position: absolute; left: 20px; bottom: 20px; padding: 8px 14px; border-radius: 999px; background: rgba(255, 255, 255, 0.92); color: #1a1a1a; font-size: 14px; font-weight: 600; }
+.hero-chip-right { left: auto; right: 20px; }
+
+/* HearthTrustStrip — design lines 67–74: white band, bottom border, grid minmax(220px,1fr), gap 10px icons. */
+.trust { background: #ffffff; border-bottom: 1px solid var(--line); }
+.trust-row { list-style: none; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; padding: 28px 24px; font-weight: 600; }
+.trust-item { display: flex; align-items: center; gap: 10px; color: #1a1a1a; }
+.trust-item svg { color: var(--brand); flex: none; }
+
+/* HearthServices — design lines 76–94: heading block max 620px, cards grid minmax(300px,1fr), gap 16px. */
+.services { display: flex; flex-direction: column; gap: 40px; }
+.services-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; }
+.services-head > div { display: flex; flex-direction: column; gap: 10px; max-width: 620px; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.service { display: flex; flex-direction: column; gap: 12px; }
+.service h3 { font-size: 22px; font-weight: 700; }
+.service p { color: var(--muted); }
+.service .text-link { margin-top: auto; }
+
+/* HearthHowItWorks — design lines 96–105: white section, steps on #f5f5f2, 16px radius, 40px numbers. */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.step { display: flex; flex-direction: column; gap: 10px; padding: 28px; border-radius: 16px; background: var(--ground); }
+.step-number { font-family: var(--font-heading); font-size: 40px; font-weight: 800; color: var(--brand); }
+.step h3 { font-size: 20px; font-weight: 700; }
+.step p { color: var(--muted); }
+
+/* HearthReviews — design lines 107–121: cards grid minmax(300px,1fr), stars letter-spacing 2px. */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.review { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.review blockquote { margin: 0; font-size: 17px; }
+.stars { color: #e8a400; letter-spacing: 2px; }
+
+/* HearthServiceArea — design lines 123–138: two columns minmax(320px,1fr), chips 8px 14px on #f5f5f2,
+   map 320px with 18px radius. */
+.area { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: center; }
+.area-copy { display: flex; flex-direction: column; gap: 16px; }
+.area-copy > p, .area-copy .section-head + p { color: var(--muted); }
+.area-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.area-chip { padding: 8px 14px; border-radius: 999px; background: var(--ground); font-weight: 500; }
+.area-map { width: 100%; height: 320px; object-fit: cover; border-radius: 18px; }
+
+/* HearthCallToAction — design lines 140–151: brand panel, 24px radius, 56px 40px padding, copy max 560px. */
+.cta-band { border-radius: 24px; background: var(--brand); color: #ffffff; padding: 56px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.cta-copy { display: flex; flex-direction: column; gap: 8px; max-width: 560px; }
+.cta-copy h2 { font-size: 40px; line-height: 1.1; font-weight: 800; }
+.cta-copy p { opacity: 0.85; }

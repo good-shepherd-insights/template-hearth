@@ -1,0 +1,66 @@
+{
+  "id": "hearth_services",
+  "name": "Hearth Services",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "",
+      "id": "default",
+      "imageUrl": "",
+      "name": "Default",
+      "primary": {
+        "eyebrow": {
+          "config": {
+            "label": "Eyebrow"
+          },
+          "type": "Text"
+        },
+        "heading": {
+          "config": {
+            "label": "Heading",
+            "single": "heading2"
+          },
+          "type": "StructuredText"
+        },
+        "all_services": {
+          "config": {
+            "allowText": true,
+            "label": "All services link"
+          },
+          "type": "Link"
+        },
+        "services": {
+          "config": {
+            "fields": {
+              "name": {
+                "config": {
+                  "label": "Service name",
+                  "single": "heading3"
+                },
+                "type": "StructuredText"
+              },
+              "description": {
+                "config": {
+                  "label": "Description",
+                  "single": "paragraph"
+                },
+                "type": "StructuredText"
+              },
+              "link": {
+                "config": {
+                  "allowText": true,
+                  "label": "Link"
+                },
+                "type": "Link"
+              }
+            },
+            "label": "Services"
+          },
+          "type": "Group"
+        }
+      },
+      "version": ""
+    }
+  ]
+}
