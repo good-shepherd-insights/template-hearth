@@ -15,8 +15,8 @@ let waiting: Message | undefined;
 let editable = false;
 // Sections arrive after the draw that asked for them, so they are marked as they do.
 let watching: MutationObserver | undefined;
-// Typing changes the page behind Vue's back, so it is drawn anew rather than patched.
-const drawing = ref(0);
+// Typing changes the page behind Vue's back, so what Vue last wrote there is put back before it draws.
+const written = new Map<HTMLElement, string | null>();
 const preview = computed(() => business.value && previewOf(business.value));
 const { commit } = useRuntimeConfig().public;
 // The embedding page's address, known from its first message.
@@ -42,11 +42,14 @@ function draw() {
   editable = waiting.editable === true;
   business.value = waiting.business;
   waiting = undefined;
-  drawing.value++;
+  written.forEach((text, element) => (element.textContent = text));
+  written.clear();
 }
 
 function onEnter({ target }: FocusEvent) {
-  if (target instanceof HTMLElement && target.isContentEditable) target.setAttribute("data-was", target.textContent ?? "");
+  if (!(target instanceof HTMLElement) || !target.isContentEditable) return;
+  target.setAttribute("data-was", target.textContent ?? "");
+  if (!written.has(target)) written.set(target, target.textContent);
 }
 
 function onLeave({ target }: FocusEvent) {
@@ -105,6 +108,6 @@ useHead({ meta: [{ name: "robots", content: "noindex" }] });
 
 <template>
   <main>
-    <SliceZone v-if="preview" :key="drawing" :slices="preview.slices" :components="components" />
+    <SliceZone v-if="preview" :slices="preview.slices" :components="components" />
   </main>
 </template>
