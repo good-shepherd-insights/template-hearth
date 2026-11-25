@@ -244,6 +244,17 @@ interface SettingsDocumentData {
 	cta_label: prismic.KeyTextField;
 	
 	/**
+	 * What the main button does field in *Settings*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: Book uses the main button link
+	 * - **API ID Path**: settings.cta_action
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/select
+	 */
+	cta_action: prismic.SelectField<"Call" | "Message" | "Visit" | "Book">;
+	
+	/**
 	 * Main button link field in *Settings*
 	 *
 	 * - **Field Type**: Link
@@ -649,16 +660,6 @@ export interface HearthServiceAreaSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	text: prismic.RichTextField;
-	
-	/**
-	 * Map image field in *Hearth Service Area → Default → Primary*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: hearth_service_area.default.primary.map
-	 * - **Documentation**: https://prismic.io/docs/fields/image
-	 */
-	map: prismic.ImageField<never>;
 	
 	/**
 	 * Areas field in *Hearth Service Area → Default → Primary*

@@ -39,7 +39,7 @@ p { margin: 0; }
 .header { background: var(--brand); color: #ffffff; }
 .header-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; }
 .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-weight: 700; font-size: 20px; }
-.brand-logo { height: 40px; width: auto; border-radius: 10px; }
+.brand-logo { height: 48px; width: auto; padding: 4px 8px; background: #fff; border-radius: 10px; }
 .footer { background: var(--brand); color: rgba(255, 255, 255, 0.85); }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; padding: 56px 24px; }
 .footer strong { color: #ffffff; display: block; margin-bottom: 8px; }
@@ -52,6 +52,7 @@ p { margin: 0; }
    heading, highlight in accent, 52px pill buttons, two 340px photos with 999px chips (8px 14px). */
 .hero { background: var(--brand); color: #ffffff; }
 .hero-copy { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; padding-top: 56px; }
+.hero-copy:last-child { padding-bottom: 72px; }
 .hero-badge { padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.3); font-size: 14px; }
 .hero h1 { max-width: 900px; font-size: 64px; line-height: 1.05; font-weight: 800; letter-spacing: -0.02em; }
 .hero h1 em { color: var(--accent); font-style: normal; }
@@ -63,6 +64,11 @@ p { margin: 0; }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-chip { position: absolute; left: 20px; bottom: 20px; padding: 8px 14px; border-radius: 999px; background: rgba(255, 255, 255, 0.92); color: #1a1a1a; font-size: 14px; font-weight: 600; }
 .hero-chip-right { left: auto; right: 20px; }
+
+/* Only /sample has these: words that can be typed into. */
+[contenteditable="true"] { cursor: text; border-radius: 4px; caret-color: currentColor; overflow-wrap: anywhere; }
+[contenteditable="true"]:hover { outline: 1px dashed currentColor; outline-offset: 4px; }
+[contenteditable="true"]:focus { outline: 2px solid currentColor; outline-offset: 4px; }
 
 /* HearthTrustStrip — design lines 67–74: white band, bottom border, grid minmax(220px,1fr), gap 10px icons. */
 .trust { background: #ffffff; border-bottom: 1px solid var(--line); }
@@ -100,7 +106,6 @@ p { margin: 0; }
 .area-copy > p, .area-copy .section-head + p { color: var(--muted); }
 .area-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .area-chip { padding: 8px 14px; border-radius: 999px; background: var(--ground); font-weight: 500; }
-.area-map { width: 100%; height: 320px; object-fit: cover; border-radius: 18px; }
 
 /* HearthCallToAction — design lines 140–151: brand panel, 24px radius, 56px 40px padding, copy max 560px. */
 .cta-band { border-radius: 24px; background: var(--brand); color: #ffffff; padding: 56px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }

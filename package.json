@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "sample": "TEMPLATE_COMMIT=${VERCEL_GIT_COMMIT_SHA:-$(git rev-parse HEAD)$(test -z \"$(git status --porcelain)\" || echo -dirty)} SAMPLE_ONLY=1 nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },

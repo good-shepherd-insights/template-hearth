@@ -23,7 +23,7 @@ const icons: Record<string, string[]> = {
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path v-for="d in icons[point.icon ?? 'check']" :key="d" :d="d" />
         </svg>
-        {{ point.label }}
+        <span>{{ point.label }}</span>
       </li>
     </ul>
   </section>

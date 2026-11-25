@@ -20,9 +20,9 @@ defineProps(getSliceComponentProps<Content.HearthReviewsSlice>());
             {{ "★".repeat(review.rating) }}
           </span>
           <blockquote><PrismicRichText :field="review.quote" /></blockquote>
-          <figcaption>
-            <strong>{{ review.name }}</strong>
-            <template v-if="review.detail">, {{ review.detail }}</template>
+          <figcaption v-if="review.name || review.detail">
+            <strong v-if="review.name">{{ review.name }}</strong>
+            <template v-if="review.detail"><template v-if="review.name">, </template>{{ review.detail }}</template>
           </figcaption>
         </figure>
       </div>

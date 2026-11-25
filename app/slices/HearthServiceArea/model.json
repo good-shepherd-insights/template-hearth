@@ -30,12 +30,6 @@
           },
           "type": "StructuredText"
         },
-        "map": {
-          "config": {
-            "label": "Map image"
-          },
-          "type": "Image"
-        },
         "areas": {
           "config": {
             "fields": {

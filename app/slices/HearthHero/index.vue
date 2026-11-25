@@ -9,6 +9,7 @@ defineProps(getSliceComponentProps<Content.HearthHeroSlice>());
 // Main button and phone come from the Settings document, fetched once under a shared key
 // (prismic.io/docs/nuxt.md, "Fetch content in pages and slices"; app/composables/useSettings.ts).
 const settings = useSettings();
+const cta = useCta();
 </script>
 
 <template>
@@ -23,20 +24,18 @@ const settings = useSettings();
       <PrismicRichText :field="slice.primary.heading" />
       <PrismicRichText :field="slice.primary.description" />
       <div class="hero-actions">
-        <PrismicLink v-if="$prismic.isFilled.link(settings?.data.cta_link)" :field="settings!.data.cta_link" class="btn btn-accent">
-          {{ settings?.data.cta_label }}
-        </PrismicLink>
+        <a v-if="cta" :href="cta.href" class="btn btn-accent">{{ cta.label }}</a>
         <a v-if="settings?.data.phone" :href="`tel:${settings.data.phone}`" class="btn btn-ghost">{{ settings.data.phone }}</a>
       </div>
     </div>
-    <div class="container hero-photos">
+    <div v-if="$prismic.isFilled.image(slice.primary.image_one) || $prismic.isFilled.image(slice.primary.image_two)" class="container hero-photos">
       <!-- <PrismicImage>: prismicio-vue/v6.md. Image alt text comes from the image field itself. -->
-      <figure class="hero-photo">
-        <PrismicImage v-if="$prismic.isFilled.image(slice.primary.image_one)" :field="slice.primary.image_one" />
+      <figure v-if="$prismic.isFilled.image(slice.primary.image_one)" class="hero-photo">
+        <PrismicImage :field="slice.primary.image_one" />
         <figcaption v-if="slice.primary.chip_one" class="hero-chip">{{ slice.primary.chip_one }}</figcaption>
       </figure>
-      <figure class="hero-photo">
-        <PrismicImage v-if="$prismic.isFilled.image(slice.primary.image_two)" :field="slice.primary.image_two" />
+      <figure v-if="$prismic.isFilled.image(slice.primary.image_two)" class="hero-photo">
+        <PrismicImage :field="slice.primary.image_two" />
         <figcaption v-if="slice.primary.chip_two" class="hero-chip hero-chip-right">{{ slice.primary.chip_two }}</figcaption>
       </figure>
     </div>

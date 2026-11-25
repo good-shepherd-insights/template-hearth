@@ -3,6 +3,7 @@
 // ("Usage with Pages"); a single layout belongs in app.vue, not layouts/
 // (nuxt.com/docs/4.x/directory-structure/app/layouts: "If you only have a single layout ... use app.vue").
 const settings = useSettings();
+const cta = useCta();
 
 // Font pairing is a Select field on Settings (prismic.io/docs/fields/select.md: "Select field values
 // can be used like a string"). Fonts load as <link> tags through useHead
@@ -38,11 +39,11 @@ const brandVars = computed(() => ({
 
 <template>
   <div class="site" :style="brandVars">
-    <div class="topbar">
+    <div v-if="settings?.data.city || settings?.data.license_note || settings?.data.phone" class="topbar">
       <div class="container topbar-row">
         <span>
-          <template v-if="settings?.data.city">Serving {{ settings.data.city }}</template>
-          <template v-if="settings?.data.license_note"> · {{ settings.data.license_note }}</template>
+          <template v-if="settings?.data.city">{{ settings.data.city }}</template>
+          <template v-if="settings?.data.license_note"><template v-if="settings.data.city"> · </template>{{ settings.data.license_note }}</template>
         </span>
         <a v-if="settings?.data.phone" :href="`tel:${settings.data.phone}`">Call {{ settings.data.phone }}</a>
       </div>
@@ -55,10 +56,7 @@ const brandVars = computed(() => ({
           <PrismicImage v-if="$prismic.isFilled.image(settings?.data.logo)" :field="settings!.data.logo" alt="" class="brand-logo" />
           <span>{{ settings?.data.business_name }}</span>
         </NuxtLink>
-        <!-- prismicio-vue/v6.md <PrismicLink>; isFilled helpers via $prismic ("Access Prismic client and isFilled helpers"). -->
-        <PrismicLink v-if="$prismic.isFilled.link(settings?.data.cta_link)" :field="settings!.data.cta_link" class="btn btn-accent">
-          {{ settings?.data.cta_label }}
-        </PrismicLink>
+        <a v-if="cta" :href="cta.href" class="btn btn-accent">{{ cta.label }}</a>
       </div>
     </header>
 
@@ -72,15 +70,15 @@ const brandVars = computed(() => ({
             {{ [settings?.data.trade, settings?.data.city].filter(Boolean).join(" in ") }}
           </p>
         </div>
-        <div>
+        <div v-if="settings?.data.phone || settings?.data.email || settings?.data.address">
           <strong>Contact</strong>
-          <p v-if="settings?.data.phone">{{ settings.data.phone }}</p>
-          <p v-if="settings?.data.email">{{ settings.data.email }}</p>
-          <p v-if="settings?.data.address">{{ settings.data.address }}</p>
+          <p v-if="settings?.data.phone" class="contact-phone">{{ settings.data.phone }}</p>
+          <p v-if="settings?.data.email" class="contact-email">{{ settings.data.email }}</p>
+          <p v-if="settings?.data.address" class="contact-address">{{ settings.data.address }}</p>
         </div>
         <div v-if="settings?.data.hours">
           <strong>Hours</strong>
-          <p>{{ settings.data.hours }}</p>
+          <p class="contact-hours">{{ settings.data.hours }}</p>
         </div>
       </div>
     </footer>

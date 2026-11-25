@@ -18,7 +18,6 @@ defineProps(getSliceComponentProps<Content.HearthServiceAreaSlice>());
           <li v-for="(area, i) in slice.primary.areas" :key="i" class="area-chip">{{ area.name }}</li>
         </ul>
       </div>
-      <PrismicImage v-if="$prismic.isFilled.image(slice.primary.map)" :field="slice.primary.map" class="area-map" />
     </div>
   </section>
 </template>

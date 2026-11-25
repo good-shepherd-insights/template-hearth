@@ -14,7 +14,24 @@ export default defineNuxtConfig({
   // prismic.io/docs/nuxt.md step 3: `modules: ["@nuxtjs/prismic"]`.
   modules: ["@nuxtjs/prismic"],
 
+  // A build made for embedding /sample ships that page alone, without the data of others.
+  experimental: { payloadExtraction: process.env.SAMPLE_ONLY === undefined },
+
+  // A client's site does not ship the preview page, and a preview ships nothing else.
+  hooks: {
+    "pages:extend": (pages) => {
+      const kept = pages.filter(({ name }) => (name === "sample") === (process.env.SAMPLE_ONLY !== undefined));
+      pages.splice(0, pages.length, ...kept);
+    },
+  },
+  nitro: process.env.SAMPLE_ONLY === undefined ? {} : { prerender: { routes: ["/sample"], crawlLinks: false } },
+
+  // Which version of this template /sample shows, so a site is built from that one.
+  runtimeConfig: { public: { commit: process.env.TEMPLATE_COMMIT ?? "" } },
+
   prismic: {
+    // Not on a build made for embedding /sample: it is a third-party script, for editors only.
+    toolbar: process.env.SAMPLE_ONLY === undefined,
     // `endpoint` is "A Prismic repository name", defaulting to `repositoryName` from
     // prismic.config.json (prismic.io/docs/technical-reference/nuxtjs-prismic/v5.md, PrismicModule).
     // A template is built once per client, each pointing at that client's own repository, so the

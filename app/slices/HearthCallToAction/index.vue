@@ -7,6 +7,7 @@ import type { Content } from "@prismicio/client";
 defineProps(getSliceComponentProps<Content.HearthCtaSlice>());
 
 const settings = useSettings();
+const cta = useCta();
 </script>
 
 <template>
@@ -18,9 +19,7 @@ const settings = useSettings();
           <PrismicRichText :field="slice.primary.text" />
         </div>
         <div class="hero-actions">
-          <PrismicLink v-if="$prismic.isFilled.link(settings?.data.cta_link)" :field="settings!.data.cta_link" class="btn btn-accent">
-            {{ settings?.data.cta_label }}
-          </PrismicLink>
+          <a v-if="cta" :href="cta.href" class="btn btn-accent">{{ cta.label }}</a>
           <a v-if="settings?.data.phone" :href="`tel:${settings.data.phone}`" class="btn btn-ghost">{{ settings.data.phone }}</a>
         </div>
       </div>
